@@ -1,0 +1,17 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "Blockchain demo application.",
+  "main": "index.html",
+  "scripts": {
+    "test": "build"
+  },
+  "author": "Tyler Eads",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}

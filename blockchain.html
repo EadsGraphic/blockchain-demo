@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blockchain Demo</title>
+    <link rel="shortcut icon" href="src/imgs/favicon.ico" type="image/x-icon">
+    
+    <!-- Strapi.io Bootstrap CSS -->
+    <link rel="stylesheet" href="src/sass/strapi-io.css">
+    
+    <!-- SASS Import -->
+    <link rel="stylesheet" href="src/sass/main.css">
+
+    <link rel="stylesheet" href="src/sass/blockchain.css">
+
+    <script src="src/js/jquery-2.2.4.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/spin.min.js"></script>
+    <script src="src/js/ladda.min.js"></script>
+    <script src="src/js/sha256.js"></script>
+    <script src="src/js/blockchain.js"></script>
+</head>
+
+<div class="homepage">
+    <header>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a href="index.html" title="Go to home" class="navbar-brand">
+                                <img alt="logo" class="logo" src="src/imgs/svg-logo.svg">
+                            </a>
+                            <button type="button" class="navbar-toggle collaspe" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+                                <span></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="blockchain.html">Blockchain</a>
+                                </li>
+                                <li>
+                                    <a href="api-main.html">API Demo</a>
+                                </li>
+                                <li>
+                                    <a href="onboard-kyc.html">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+    </header>
+
+    <section class="sub-header">
+        <!-- Fill With Links -->
+    </section>
+</div>
+
+<div class="container-fluid">
+    <div class="row blocks">
+        <div class="col-xs-4">
+            <div id="block1chain1well" class="well">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="block1chain1number" class="col-sm-2 control-label">Block:</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="block1chain1number" type="text" value="1" onkeyup="updateChain(1, 1);" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block1chain1nonce" class="col-sm-2 control-label">Nonce:</label>
+                        <div class="col-sm-10">
+                            <input id="block1chain1nonce" type="text" value="11316" onkeyup="updateChain(1, 1);" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block1chain1data" class="col-sm-2 control-label">Data:</label>
+                        <div class="col-sm-10">
+                            <textarea id="block1chain1data" rows="10" onkeyup="updateChain(1, 1);" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div id="state" class="form-group">
+                        <label for="block1chain1previous" class="col-sm-2 control-label">Prev:</label>
+                        <div class="col-sm-10">
+                            <input id="block1chain1previous" type="text" value="0000000000000000000000000000000000000000000000000000000000000000" disabled
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div id="state" class="form-group">
+                        <label for="block1chain1hash" class="col-sm-2 control-label">Hash:</label>
+                        <div class="col-sm-10">
+                            <input id="block1chain1hash" type="text" disabled class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <i class="icon-spinner icon-spin icon-large"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <button id="block1chain1mineButton" data-style="expand-right" class="btn btn-primary ladda-button">
+                                <span class="ladda-label">Mine</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div id="block2chain1well" class="well">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="block2chain1number" class="col-sm-2 control-label">Block:</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="block2chain1number" type="text" value="2" onkeyup="updateChain(2, 1);" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block2chain1nonce" class="col-sm-2 control-label">Nonce:</label>
+                        <div class="col-sm-10">
+                            <input id="block2chain1nonce" type="text" value="35230" onkeyup="updateChain(2, 1);" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block2chain1data" class="col-sm-2 control-label">Data:</label>
+                        <div class="col-sm-10">
+                            <textarea id="block2chain1data" rows="10" onkeyup="updateChain(2, 1);" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div id="state" class="form-group">
+                        <label for="block2chain1previous" class="col-sm-2 control-label">Prev:</label>
+                        <div class="col-sm-10">
+                            <input id="block2chain1previous" type="text" value="000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf" disabled
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div id="state" class="form-group">
+                        <label for="block2chain1hash" class="col-sm-2 control-label">Hash:</label>
+                        <div class="col-sm-10">
+                            <input id="block2chain1hash" type="text" disabled class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <i class="icon-spinner icon-spin icon-large"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <button id="block2chain1mineButton" data-style="expand-right" class="btn btn-primary ladda-button">
+                                <span class="ladda-label">Mine</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div id="block3chain1well" class="well">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="block3chain1number" class="col-sm-2 control-label">Block:</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input id="block3chain1number" type="text" value="3" onkeyup="updateChain(3, 1);" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block3chain1nonce" class="col-sm-2 control-label">Nonce:</label>
+                        <div class="col-sm-10">
+                            <input id="block3chain1nonce" type="text" value="12937" onkeyup="updateChain(3, 1);" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="block3chain1data" class="col-sm-2 control-label">Data:</label>
+                        <div class="col-sm-10">
+                            <textarea id="block3chain1data" rows="10" onkeyup="updateChain(3, 1);" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div id="state" class="form-group">
+                        <label for="block3chain1previous" class="col-sm-2 control-label">Prev:</label>
+                        <div class="col-sm-10">
+                            <input id="block3chain1previous" type="text" value="000012fa9b916eb9078f8d98a7864e697ae83ed54f5146bd84452cdafd043c19" disabled
+                                class="form-control">
+                        </div>
+                    </div>
+                    <div id="state" class="form-group">
+                        <label for="block3chain1hash" class="col-sm-2 control-label">Hash:</label>
+                        <div class="col-sm-10">
+                            <input id="block3chain1hash" type="text" disabled class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <i class="icon-spinner icon-spin icon-large"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <button id="block3chain1mineButton" data-style="expand-right" class="btn btn-primary ladda-button">
+                                <span class="ladda-label">Mine</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+
+    
+
+</div>
+
+<!-- Blockchain Initialization -->
+<script>
+    $(function () {
+        setup(1, 1);
+        setup(2, 1);
+        setup(3, 1);
+        setup(4, 1);
+        setup(5, 1);
+    });
+
+    function getText(block, chain) {
+        return $('#block' + block + 'chain' + chain + 'number').val() +
+            $('#block' + block + 'chain' + chain + 'nonce').val() +
+            $('#block' + block + 'chain' + chain + 'data').val() +
+            $('#block' + block + 'chain' + chain + 'previous').val();
+    }
+
+    function setup(block, chain) {
+        updateHash(block, chain);
+        $('#block' + block + 'chain' + chain + 'mineButton').click(function (e) {
+            e.preventDefault();
+            var l = Ladda.create(this);
+            l.start();
+            setTimeout(function () {
+                mine(block, chain, true);
+                l.stop();
+            }, 100); // give UI time to update
+        });
+    }
+</script>
+
+
+<!-- JS Imports -->
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+</body>
+
+</html>
