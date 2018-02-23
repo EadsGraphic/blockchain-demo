@@ -14,9 +14,8 @@
 .well-success {
   color: #52c41a;
   background: #f6ffed;
-  border-color: #b7eb8f;
   line-height: 20px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #b7eb8f;
   padding: 24px 32px;
 }
 
@@ -25,7 +24,7 @@
   color: red;
   border-color: #b7eb8f;
   line-height: 20px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid red;
   padding: 24px 32px;
 }
 
