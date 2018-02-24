@@ -3567,7 +3567,7 @@ html{
 }
 body{
     height:100%;
-    background-color:#fff;
+    background-color: white;
     font-family:Lato;
     font-size:1.4rem;
     font-weight:400;
