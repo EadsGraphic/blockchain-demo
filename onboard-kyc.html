@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +70,7 @@
     
                             <div class="wizard-header">
                                 <h3 class="wizard-title">
-                                    Build A Profile
+                                    Let's get you OnBoard!
                                 </h3>
                                 <h5>Introduce yourself to your new financial institution!</h5>
                             </div>
@@ -81,15 +80,17 @@
                                         <a href="#details" data-toggle="tab">Personal Info</a>
                                     </li>
                                     <li>
-                                        <a href="#captain" data-toggle="tab">Financial Info</a>
+                                        <a href="#captain" data-toggle="tab">Finances</a>
                                     </li>
                                     <li>
                                         <a href="#description" data-toggle="tab">Legal Documents</a>
                                     </li>
                                 </ul>
                             </div>
-    
+                            
+                            
                             <div class="tab-content">
+                                <!-- Personal Info Profile Pane -->
                                 <div class="tab-pane" id="details">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -108,6 +109,13 @@
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">First Name</label>
                                                     <input name="name" type="text" class="form-control" value="Carson">
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Phone Number</label>
+                                                    <input name="name" type="tel" class="form-control" value="4845678976">
                                                 </div>
                                             </div>
                                             
@@ -144,6 +152,13 @@
 
                                             <div class="input-group">
                                                 <div class="form-group label-floating">
+                                                    <label class="control-label">Email Address</label>
+                                                    <input name="name" type="email" class="form-control" value="cwentz@eagles.com">
+                                                </div>
+                                            </div>
+
+                                            <div class="input-group">
+                                                <div class="form-group label-floating">
                                                     <label class="control-label">City</label>
                                                     <input name="name" type="text" class="form-control" value="Philadelphia">
                                                 </div>
@@ -155,63 +170,173 @@
                                                     <input name="name" type="text" class="form-control" value="19468">
                                                 </div>
                                             </div>
-
-
-
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Are you a US Citizen?</label>
+                                                <input name="name" type="checkbox" class="form-control" value="true" checked>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Do you have a dual citizenship? *</label>
+                                                <input name="name" type="checkbox" class="form-control" value="true">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Finances Profile Pane -->
                                 <div class="tab-pane" id="captain">
-                                    <h4 class="info-text">What type of room would you want? </h4>
+                                    <h4 class="info-text">Give us an idea of you finances.</h4>
                                     <div class="row">
                                         <div class="col-sm-10 col-sm-offset-1">
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="This is good if you travel alone.">
-                                                    <input type="radio" name="job" value="Design">
+                                                <div class="choice active" data-toggle="wizard-radio" rel="tooltip" title="This is good if you are currently working full time.">
+                                                    <input type="radio" name="job" value="employed" checked>
                                                     <div class="icon">
-                                                        <i class="material-icons">weekend</i>
+                                                        <i class="fa fa-building-o" aria-hidden="true"></i>
                                                     </div>
-                                                    <h6>Single</h6>
+                                                    <h6>Employed</h6>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this room if you're traveling with your family.">
-                                                    <input type="radio" name="job" value="Code">
+                                                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="This option is best for those unemployed and actively seeking employement.">
+                                                    <input type="radio" name="job" value="unemployed">
                                                     <div class="icon">
-                                                        <i class="material-icons">home</i>
+                                                        <i class="fa fa-street-view" aria-hidden="true"></i>
                                                     </div>
-                                                    <h6>Family</h6>
+                                                    <h6>UnEmployed</h6>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this option if you are coming with your team.">
-                                                    <input type="radio" name="job" value="Code">
+                                                <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Select this option if you are receiving an income from a source not listed.">
+                                                    <input type="radio" name="job" value="other">
                                                     <div class="icon">
-                                                        <i class="material-icons">business</i>
+                                                        <i class="fa fa-money" aria-hidden="true"></i>
                                                     </div>
-                                                    <h6>Business</h6>
+                                                    <h6>Other</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Left Form Side -->
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Company Name or Employer</label>
+                                                <input name="name" type="text" class="form-control" value="Philadelphia Eagles">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Work Phone Number</label>
+                                                <input name="name" type="tel" class="form-control" value="4843203605">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Annual Income</label>
+                                                <input name="name2" type="text" class="form-control" value="$3,624,682">
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Tax Status</label>
+                                                <input name="name2" type="text" class="form-control" value="Married Filing Jointly">
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Estimated Amount Owed To Creditors</label>
+                                                <input name="name2" type="text" class="form-control" value="$103,216">
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Investment Objectives</label>
+                                                <input name="name2" type="text" class="form-control" value="Generating Income">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Right Form Side -->
+                                    <div class="col-sm-6">  
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Occupation</label>
+                                                <input name="name" type="text" class="form-control" value="Professional Athlete">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label"># of Years Employed</label>
+                                                <input name="name" type="text" class="form-control" value="2">
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Estimated Net Worth</label>
+                                                <input name="name" type="text" class="form-control" value="$8,382,219">
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Recent Credit Score</label>
+                                                <input name="name2" type="text" class="form-control" value="850">
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Value of Overseas Investments</label>
+                                                <input name="name2" type="text" class="form-control" value="$1,792,473">
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Investment Experience</label>
+                                                <input name="name2" type="text" class="form-control" value="3 Years">
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
+
+                                <!-- Documents Profile Pane -->
                                 <div class="tab-pane" id="description">
                                     <div class="row">
-                                        <h4 class="info-text"> Drop us a small description.</h4>
-                                        <div class="col-sm-6 col-sm-offset-1">
-                                            <div class="form-group">
-                                                <label>Room description</label>
-                                                <textarea class="form-control" placeholder="" rows="6"></textarea>
+                                        <h4 class="info-text"> Please submit your legal documents.</h4>
+                                        <div class="col-sm-12">
+                                            <div id="dropzone">
+                                                <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload" style="border: 2px dashed #0087F7; border-radius: 5px; background: white;">
+                                            
+                                                    <div class="dz-message needsclick">
+                                                        Drop files here or click to upload.
+                                                        <br>
+                                                        <span class="note needsclick">(This is just a demo dropzone. Selected files are
+                                                            <strong>not</strong> actually uploaded.)</span>
+                                                    </div>
+                                            
+                                                </form>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group">
-                                                <label class="control-label">Example</label>
-                                                <p class="description">"The room really nice name is recognized as being a really awesome room. We use
-                                                    it every sunday when we go fishing and we catch a lot. It has some kind of
-                                                    magic shield around it."</p>
-                                            </div>
-                                        </div>
+                                        
+
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -222,8 +347,6 @@
                                 </div>
                                 <div class="pull-left">
                                     <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
-    
-    
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -250,6 +373,9 @@
 
     <!--  jquery.validate here: http://jqueryvalidation.org/	 -->
     <script src="src/js/jquery.validate.min.js"></script>
+
+    <!-- DropZone.js -->
+    <script src="src/js/dropzone.js"></script>
 </body>
 
 </html>
